@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pix no Bolso | Solicitação</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <h1 class="logo">Pix<span>no</span>Bolso</h1>
+    <p class="subtitle">
+      Serviço financeiro local • Operação formal • Pagamentos via Pix<br>
+      <strong>Exclusivo para motoboys do Norte da Ilha – Florianópolis</strong>
+    </p>
+  </div>
+</header>
+
+<main class="container">
+  <h2 class="title">Solicite seu Adiantamento</h2>
+
+  <!-- IDENTIFICAÇÃO -->
+  <section class="card">
+    <h3>Quem é você</h3>
+    <div class="grid">
+      <div class="field">
+        <label>Nome completo</label>
+        <input type="text" name="nome" required>
+      </div>
+
+      <div class="field">
+        <label>CPF</label>
+        <input type="text" name="cpf" placeholder="000.000.000-00" required>
+      </div>
+
+      <div class="field">
+        <label>WhatsApp</label>
+        <input type="tel" name="whatsapp" placeholder="(48) 9xxxx-xxxx" required>
+      </div>
+
+      <div class="field">
+        <label>Bairro (Norte da Ilha)</label>
+        <select name="bairro" required>
+          <option value="">Selecione</option>
+          <option>Ingleses</option>
+          <option>Rio Vermelho</option>
+          <option>Canasvieiras</option>
+          <option>Jurerê</option>
+          <option>Cachoeira do Bom Jesus</option>
+          <option>Vargem Grande</option>
+          <option>Vargem Pequena</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Endereço residencial atual</label>
+        <input type="text" name="endereco" placeholder="Rua / Avenida / Travessa" required>
+      </div>
+
+      <div class="field">
+        <label>Número da residência</label>
+        <input type="text" name="numero" placeholder="Ex: 123" required>
+      </div>
+
+      <div class="field">
+        <label>Complemento (opcional)</label>
+        <input type="text" name="complemento" placeholder="Casa, apto, bloco, fundos">
+      </div>
+    </div>
+  </section>
+
+  <!-- ATIVIDADE PROFISSIONAL -->
+  <section class="card">
+    <h3>Atividade Profissional</h3>
+    <div class="grid">
+      <div class="field">
+        <label>Trabalha com</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="uber"> Uber Moto</label>
+          <label><input type="checkbox" name="99"> 99 Moto</label>
+          <label><input type="checkbox" name="particular"> Particular</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Há quanto tempo roda de app</label>
+        <select name="tempo_app" required>
+          <option value="">Selecione</option>
+          <option>Menos de 6 meses</option>
+          <option>6 meses a 1 ano</option>
+          <option>Mais de 1 ano</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECLARAÇÕES -->
+  <section class="card">
+    <h3>Declarações</h3>
+    <p class="info">
+      Ao continuar, o cliente declara que todas as informações fornecidas são verdadeiras.
+    </p>
+
+    <label class="checkbox">
+      <input type="checkbox" name="declara_documentos" required>
+      Declaro que possuo CNH válida, comprovante de residência e conta ativa em aplicativo de entrega
+    </label>
+  </section>
+
+  <!-- CONDIÇÕES -->
+  <section class="card highlight">
+    <h3>Condições do Serviço</h3>
+    <p>
+      Valor liberado: <strong>R$ 40</strong><br>
+      Pagamento: <strong>R$ 30 por dia</strong><br>
+      Prazo: <strong>2 dias</strong><br>
+      Valor total: <strong>R$ 60</strong>
+    </p>
+
+    <label class="checkbox">
+      <input type="checkbox" name="aceite_condicoes" required>
+      Li e concordo com as condições do serviço
+    </label>
+  </section>
+
+  <!-- RESPONSABILIDADE -->
+  <section class="card warning">
+    <h3>Responsabilidade em caso de não pagamento</h3>
+    <ul>
+      <li>Suspensão de novos créditos</li>
+      <li>Registro interno de inadimplência</li>
+      <li>Contato para regularização</li>
+    </ul>
+
+    <label class="checkbox">
+      <input type="checkbox" name="aceite_responsabilidade" required>
+      Estou ciente e assumo total responsabilidade pelo pagamento
+    </label>
+  </section>
+
+  <button class="submit-btn">Enviar Solicitação</button>
+</main>
+
+<!-- SCRIPT EMBUTIDO (AJUSTADO, SEM FOTOS) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".submit-btn");
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const nome = document.querySelector('input[name="nome"]');
+    const cpf = document.querySelector('input[name="cpf"]');
+    const whatsapp = document.querySelector('input[name="whatsapp"]');
+    const bairro = document.querySelector('select[name="bairro"]');
+    const endereco = document.querySelector('input[name="endereco"]');
+    const numero = document.querySelector('input[name="numero"]');
+    const complemento = document.querySelector('input[name="complemento"]');
+    const tempoApp = document.querySelector('select[name="tempo_app"]');
+
+    const uber = document.querySelector('input[name="uber"]');
+    const noveNove = document.querySelector('input[name="99"]');
+    const particular = document.querySelector('input[name="particular"]');
+
+    const declaraDocs = document.querySelector('input[name="declara_documentos"]');
+    const aceiteCondicoes = document.querySelector('input[name="aceite_condicoes"]');
+    const aceiteResponsabilidade = document.querySelector('input[name="aceite_responsabilidade"]');
+
+    if (
+      !nome.value ||
+      !cpf.value ||
+      !whatsapp.value ||
+      !bairro.value ||
+      !endereco.value ||
+      !numero.value ||
+      !tempoApp.value ||
+      (!uber.checked && !noveNove.checked && !particular.checked) ||
+      !declaraDocs.checked ||
+      !aceiteCondicoes.checked ||
+      !aceiteResponsabilidade.checked
+    ) {
+      alert("⚠️ Preencha TODOS os campos obrigatórios para continuar.");
+      return;
+    }
+
+    let atividade = [];
+    if (uber.checked) atividade.push("Uber Moto");
+    if (noveNove.checked) atividade.push("99 Moto");
+    if (particular.checked) atividade.push("Particular");
+
+    const mensagem = `
+🟢 *NOVA SOLICITAÇÃO – PIX NO BOLSO*
+
+👤 Nome: ${nome.value}
+📄 CPF: ${cpf.value}
+📱 WhatsApp: ${whatsapp.value}
+
+🏠 Endereço: ${endereco.value}, Nº ${numero.value}
+📍 Bairro: ${bairro.value}
+➕ Complemento: ${complemento.value || "Não informado"}
+
+🛵 Atividade: ${atividade.join(", ")}
+⏱️ Tempo rodando de app: ${tempoApp.value}
+
+💰 Condições
+Valor: R$ 40
+Pagamento: R$ 30 por dia
+Prazo: 2 dias
+Total: R$ 60
+
+☑️ Declarações e condições aceitas
+    `.trim();
+
+    const numeroWhats = "554896986075";
+    const url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  });
+});
+</script>
+
+</body>
+</html>
