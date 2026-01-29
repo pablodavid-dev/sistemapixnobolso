@@ -9,100 +9,103 @@ body {
   color: #1f2937;
 }
 
+/* CONTAINER */
 .container {
-  max-width: 960px;
+  max-width: 860px;
   margin: auto;
   padding: 16px;
 }
 
+/* HEADER */
 .header {
   background: #0b1f3b;
   color: #fff;
-  padding: 24px 0;
+  padding: 28px 0;
 }
 
 .logo {
   margin: 0;
-  font-size: 26px;
-}
-
-.logo span {
-  color: #22c55e;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .subtitle {
   font-size: 13px;
   opacity: 0.9;
+  margin-top: 6px;
 }
 
+/* TÍTULO */
 .title {
-  margin: 24px 0;
+  margin: 28px 0 16px;
   font-size: 24px;
+  font-weight: 600;
 }
 
+/* CARDS */
 .card {
   background: #fff;
-  border-radius: 8px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 20px;
   margin-bottom: 16px;
   border: 1px solid #e5e7eb;
 }
 
 .card h3 {
   margin-top: 0;
+  margin-bottom: 16px;
   color: #0b1f3b;
+  font-size: 18px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.field label {
+/* INPUTS */
+label {
   font-size: 14px;
+  font-weight: 500;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
-.field input,
-.field select {
+input[type="text"],
+input[type="tel"],
+select {
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #cbd5e1;
-}
-
-.checkbox-group label {
-  font-size: 14px;
-  display: block;
-}
-
-.upload-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
-@media (min-width: 768px) {
-  .upload-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.upload-box {
-  border: 1px dashed #94a3b8;
   padding: 12px;
-  border-radius: 6px;
-  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  margin-bottom: 14px;
 }
 
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 1px #16a34a33;
+}
+
+/* CHECKBOX */
+input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+}
+
+.card label input[type="checkbox"] {
+  display: inline-block;
+}
+
+.card label {
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ATIVIDADE */
+.card .checkbox-group,
+.card > label {
+  margin-bottom: 10px;
+}
+
+/* DESTAQUES */
 .highlight {
   background: #f0fdf4;
   border-color: #22c55e;
@@ -113,23 +116,27 @@ body {
   border-color: #ef4444;
 }
 
-.checkbox {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
+/* BOTÃO */
 .submit-btn {
   width: 100%;
-  background: #16a34a;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
   color: #fff;
   border: none;
-  padding: 16px;
+  padding: 18px;
   font-size: 18px;
-  border-radius: 8px;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
+  margin-top: 8px;
 }
 
 .submit-btn:hover {
-  background: #15803d;
+  opacity: 0.95;
+}
+
+/* RESPONSIVO */
+@media (min-width: 768px) {
+  .card {
+    padding: 24px;
+  }
 }
