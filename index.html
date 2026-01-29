@@ -10,7 +10,7 @@
 
 <header class="header">
   <div class="container">
-    <h1 class="logo">Quebra<span></span>Galho</h1>
+    <h1 class="logo">Quebra Galho</h1>
     <p class="subtitle">
       Serviço financeiro local • Operação formal • Pagamentos via Pix<br>
       <strong>Exclusivo para motoboys do Norte da Ilha – Florianópolis</strong>
@@ -24,206 +24,155 @@
   <!-- IDENTIFICAÇÃO -->
   <section class="card">
     <h3>Quem é você</h3>
-    <div class="grid">
-      <div class="field">
-        <label>Nome completo</label>
-        <input type="text" name="nome" required>
-      </div>
 
-      <div class="field">
-        <label>CPF</label>
-        <input type="text" name="cpf" placeholder="000.000.000-00" required>
-      </div>
+    <label>Nome completo</label>
+    <input type="text" name="nome" placeholder="Seu nome completo">
 
-      <div class="field">
-        <label>WhatsApp</label>
-        <input type="tel" name="whatsapp" placeholder="(48) 9xxxx-xxxx" required>
-      </div>
+    <label>CPF</label>
+    <input type="text" name="cpf" placeholder="000.000.000-00">
 
-      <div class="field">
-        <label>Bairro (Norte da Ilha)</label>
-        <select name="bairro" required>
-          <option value="">Selecione</option>
-          <option>Ingleses</option>
-          <option>Rio Vermelho</option>
-          <option>Canasvieiras</option>
-          <option>Jurerê</option>
-          <option>Cachoeira do Bom Jesus</option>
-          <option>Vargem Grande</option>
-          <option>Vargem Pequena</option>
-        </select>
-      </div>
+    <label>WhatsApp</label>
+    <input type="tel" name="whatsapp" placeholder="(48) 9xxxx-xxxx">
 
-      <div class="field">
-        <label>Endereço residencial atual</label>
-        <input type="text" name="endereco" placeholder="Rua / Avenida / Travessa" required>
-      </div>
+    <label>Bairro (Norte da Ilha)</label>
+    <select name="bairro">
+      <option value="">Selecione</option>
+      <option>Ingleses</option>
+      <option>Rio Vermelho</option>
+      <option>Canasvieiras</option>
+      <option>Jurerê</option>
+      <option>Cachoeira do Bom Jesus</option>
+      <option>Vargem Grande</option>
+      <option>Vargem Pequena</option>
+    </select>
 
-      <div class="field">
-        <label>Número da residência</label>
-        <input type="text" name="numero" placeholder="Ex: 123" required>
-      </div>
+    <label>Endereço residencial</label>
+    <input type="text" name="endereco" placeholder="Rua / Avenida">
 
-      <div class="field">
-        <label>Complemento (opcional)</label>
-        <input type="text" name="complemento" placeholder="Casa, apto, bloco, fundos">
-      </div>
-    </div>
+    <label>Número</label>
+    <input type="text" name="numero" placeholder="Ex: 123">
+
+    <label>Complemento (opcional)</label>
+    <input type="text" name="complemento" placeholder="Casa, apto, fundos">
   </section>
 
-  <!-- ATIVIDADE PROFISSIONAL -->
+  <!-- ATIVIDADE -->
   <section class="card">
     <h3>Atividade Profissional</h3>
-    <div class="grid">
-      <div class="field">
-        <label>Trabalha com</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="uber"> Uber Moto</label>
-          <label><input type="checkbox" name="99"> 99 Moto</label>
-        </div>
-      </div>
 
-      <div class="field">
-        <label>Há quanto tempo roda de app</label>
-        <select name="tempo_app" required>
-          <option value="">Selecione</option>
-          <option>Menos de 6 meses</option>
-          <option>6 meses a 1 ano</option>
-          <option>Mais de 1 ano</option>
-        </select>
-      </div>
-    </div>
+    <label>
+      <input type="checkbox" name="uber"> Uber Moto
+    </label>
+
+    <label>
+      <input type="checkbox" name="99"> 99 Moto
+    </label>
+
+    <label>Há quanto tempo roda de app</label>
+    <select name="tempo_app">
+      <option value="">Selecione</option>
+      <option>Menos de 6 meses</option>
+      <option>6 meses a 1 ano</option>
+      <option>Mais de 1 ano</option>
+    </select>
   </section>
 
   <!-- DECLARAÇÕES -->
   <section class="card">
-    <h3>Declarações</h3>
-    <p class="info">
-      Ao continuar, o cliente declara que todas as informações fornecidas são verdadeiras.
-    </p>
-
-    <label class="checkbox">
-      <input type="checkbox" name="declara_documentos" required>
+    <label>
+      <input type="checkbox" name="declara_documentos">
       Declaro que possuo CNH válida, comprovante de residência e conta ativa em aplicativo de entrega
     </label>
   </section>
 
   <!-- CONDIÇÕES -->
   <section class="card highlight">
-    <h3>Condições do Serviço</h3>
     <p>
-      Valor liberado: <strong>R$ 30</strong><br>
-      Pagamento: <strong>R$ 27 por dia</strong><br>
-      Prazo: <strong>2 dias</strong><br>
-      Valor total: <strong>R$ 54</strong>
+      <strong>Condições do serviço</strong><br><br>
+      Valor liberado: R$ 30<br>
+      Pagamento: R$ 27 por dia<br>
+      Prazo: 2 dias<br>
+      Total: R$ 54
     </p>
 
-    <label class="checkbox">
-      <input type="checkbox" name="aceite_condicoes" required>
+    <label>
+      <input type="checkbox" name="aceite_condicoes">
       Li e concordo com as condições do serviço
     </label>
   </section>
 
   <!-- RESPONSABILIDADE -->
   <section class="card warning">
-    <h3>Atenção: Responsabilidade em caso de não pagamento</h3>
-    <ul>
-      <li>Suspensão de novos créditos</li>
-      <li>Registro interno de Devedor</li>
-      <li>Contato pessoal para regularização</li>
-    </ul>
-
-    <label class="checkbox">
-      <input type="checkbox" name="aceite_responsabilidade" required>
+    <label>
+      <input type="checkbox" name="aceite_responsabilidade">
       Estou ciente e assumo total responsabilidade pelo pagamento
     </label>
   </section>
 
- <button class="submit-btn">Enviar Solicitação</button>
-
+  <button type="button" class="submit-btn">Enviar Solicitação</button>
 </main>
 
-<!-- SCRIPT EMBUTIDO (AJUSTADO, SEM FOTOS) -->
+<!-- JAVASCRIPT FUNCIONAL -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".submit-btn");
 
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
+  btn.addEventListener("click", () => {
 
-    const nome = document.querySelector('input[name="nome"]');
-    const cpf = document.querySelector('input[name="cpf"]');
-    const whatsapp = document.querySelector('input[name="whatsapp"]');
-    const bairro = document.querySelector('select[name="bairro"]');
-    const endereco = document.querySelector('input[name="endereco"]');
-    const numero = document.querySelector('input[name="numero"]');
-    const complemento = document.querySelector('input[name="complemento"]');
-    const tempoApp = document.querySelector('select[name="tempo_app"]');
+    const nome = document.querySelector('input[name="nome"]').value.trim();
+    const cpf = document.querySelector('input[name="cpf"]').value.trim();
+    const whatsapp = document.querySelector('input[name="whatsapp"]').value.trim();
+    const bairro = document.querySelector('select[name="bairro"]').value;
+    const endereco = document.querySelector('input[name="endereco"]').value.trim();
+    const numero = document.querySelector('input[name="numero"]').value.trim();
+    const complemento = document.querySelector('input[name="complemento"]').value.trim();
+    const tempoApp = document.querySelector('select[name="tempo_app"]').value;
 
-    const uber = document.querySelector('input[name="uber"]');
-    const noveNove = document.querySelector('input[name="99"]');
-    const particular = document.querySelector('input[name="particular"]');
+    const uber = document.querySelector('input[name="uber"]').checked;
+    const noveNove = document.querySelector('input[name="99"]').checked;
 
-    const declaraDocs = document.querySelector('input[name="declara_documentos"]');
-    const aceiteCondicoes = document.querySelector('input[name="aceite_condicoes"]');
-    const aceiteResponsabilidade = document.querySelector('input[name="aceite_responsabilidade"]');
+    const declaraDocs = document.querySelector('input[name="declara_documentos"]').checked;
+    const aceiteCondicoes = document.querySelector('input[name="aceite_condicoes"]').checked;
+    const aceiteResponsabilidade = document.querySelector('input[name="aceite_responsabilidade"]').checked;
 
     if (
-      !nome.value ||
-      !cpf.value ||
-      !whatsapp.value ||
-      !bairro.value ||
-      !endereco.value ||
-      !numero.value ||
-      !tempoApp.value ||
-      (!uber.checked && !noveNove.checked && !particular.checked) ||
-      !declaraDocs.checked ||
-      !aceiteCondicoes.checked ||
-      !aceiteResponsabilidade.checked
+      !nome || !cpf || !whatsapp || !bairro || !endereco || !numero ||
+      !tempoApp || (!uber && !noveNove) ||
+      !declaraDocs || !aceiteCondicoes || !aceiteResponsabilidade
     ) {
-      alert("⚠️ Preencha TODOS os campos obrigatórios para continuar.");
+      alert("⚠️ Preencha TODOS os campos obrigatórios.");
       return;
     }
 
-    let atividade = [];
-    if (uber.checked) atividade.push("Uber Moto");
-    if (noveNove.checked) atividade.push("99 Moto");
-    if (particular.checked) atividade.push("Particular");
+    const atividade = [];
+    if (uber) atividade.push("Uber Moto");
+    if (noveNove) atividade.push("99 Moto");
 
     const mensagem = `
-🟢 *NOVA SOLICITAÇÃO – PIX NO BOLSO*
+🟢 NOVA SOLICITAÇÃO – QUEBRA GALHO
 
-👤 Nome: ${nome.value}
-📄 CPF: ${cpf.value}
-📱 WhatsApp: ${whatsapp.value}
+Nome: ${nome}
+CPF: ${cpf}
+WhatsApp: ${whatsapp}
 
-🏠 Endereço: ${endereco.value}, Nº ${numero.value}
-📍 Bairro: ${bairro.value}
-➕ Complemento: ${complemento.value || "Não informado"}
+Endereço: ${endereco}, Nº ${numero}
+Bairro: ${bairro}
+Complemento: ${complemento || "Não informado"}
 
-🛵 Atividade: ${atividade.join(", ")}
-⏱️ Tempo rodando de app: ${tempoApp.value}
+Atividade: ${atividade.join(", ")}
+Tempo de app: ${tempoApp}
 
-💰 Condições
-Valor: R$ 40
-Pagamento: R$ 30 por dia
+Valor: R$ 30
+Pagamento: R$ 27 por dia
 Prazo: 2 dias
-Total: R$ 60
-
-☑️ Declarações e condições aceitas
+Total: R$ 54
     `.trim();
 
     const numeroWhats = "554896986075";
-    const url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, "_blank");
+    window.location.href = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
   });
 });
-</script> 
+</script>
 
 </body>
 </html>
-
-
-
-
-
