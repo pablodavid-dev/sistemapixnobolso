@@ -1,8 +1,10 @@
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".submit-btn");
 
   btn.addEventListener("click", () => {
 
+    // ===== CAPTURA DOS VALORES =====
     const nome = document.querySelector('input[name="nome"]').value.trim();
     const cpf = document.querySelector('input[name="cpf"]').value.trim();
     const whatsapp = document.querySelector('input[name="whatsapp"]').value.trim();
@@ -19,42 +21,60 @@ document.addEventListener("DOMContentLoaded", () => {
     const aceiteCondicoes = document.querySelector('input[name="aceite_condicoes"]').checked;
     const aceiteResponsabilidade = document.querySelector('input[name="aceite_responsabilidade"]').checked;
 
+    // ===== VALIDAÇÃO =====
     if (
-      !nome || !cpf || !whatsapp || !bairro || !endereco || !numero ||
-      !tempoApp || (!uber && !noveNove) ||
-      !declaraDocs || !aceiteCondicoes || !aceiteResponsabilidade
+      !nome ||
+      !cpf ||
+      !whatsapp ||
+      !bairro ||
+      !endereco ||
+      !numero ||
+      !tempoApp ||
+      (!uber && !noveNove) ||
+      !declaraDocs ||
+      !aceiteCondicoes ||
+      !aceiteResponsabilidade
     ) {
-      alert("⚠️ Preencha TODOS os campos obrigatórios.");
+      alert("⚠️ Preencha TODOS os campos obrigatórios para continuar.");
       return;
     }
 
+    // ===== ATIVIDADE =====
     const atividade = [];
     if (uber) atividade.push("Uber Moto");
     if (noveNove) atividade.push("99 Moto");
 
+    // ===== MENSAGEM =====
     const mensagem = `
-🟢 NOVA SOLICITAÇÃO – QUEBRA GALHO
+🟢 *NOVA SOLICITAÇÃO – QUEBRA GALHO*
 
-Nome: ${nome}
-CPF: ${cpf}
-WhatsApp: ${whatsapp}
+👤 *Nome:* ${nome}
+📄 *CPF:* ${cpf}
+📱 *WhatsApp:* ${whatsapp}
 
-Endereço: ${endereco}, Nº ${numero}
-Bairro: ${bairro}
-Complemento: ${complemento || "Não informado"}
+🏠 *Endereço:* ${endereco}, Nº ${numero}
+📍 *Bairro:* ${bairro}
+➕ *Complemento:* ${complemento || "Não informado"}
 
-Atividade: ${atividade.join(", ")}
-Tempo de app: ${tempoApp}
+🛵 *Atividade:* ${atividade.join(", ")}
+⏱️ *Tempo rodando de app:* ${tempoApp}
 
-Valor: R$ 30
+💰 *Condições do serviço*
+Valor liberado: R$ 30
 Pagamento: R$ 27 por dia
 Prazo: 2 dias
 Total: R$ 54
+
+☑️ Cliente aceitou as condições
+☑️ Cliente assumiu responsabilidade
     `.trim();
 
+    // ===== ENVIO WHATSAPP =====
     const numeroWhats = "554896986075";
     const url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
 
-    window.location.href = url; // 👈 mais confiável que window.open
+    // método mais confiável (não bloqueia)
+    window.location.href = url;
   });
 });
+</script>
