@@ -1,3 +1,4 @@
+/* RESET E BASE */
 * {
   box-sizing: border-box;
   font-family: Inter, Arial, sans-serif;
@@ -5,7 +6,7 @@
 
 body {
   margin: 0;
-  background: #f4f6f8;
+  background: #f4f5f7;
   color: #1f2937;
 }
 
@@ -18,43 +19,62 @@ body {
 
 /* HEADER */
 .header {
-  background: #0b1f3b;
-  color: #fff;
-  padding: 28px 0;
+  background: #b11226; /* vermelho institucional */
+  color: #ffffff;
+  padding: 32px 0;
 }
 
 .logo {
   margin: 0;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
 }
 
 .subtitle {
   font-size: 13px;
-  opacity: 0.9;
+  opacity: 0.95;
   margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* CTA TOPO */
+.cta-top {
+  display: inline-block;
+  margin-top: 18px;
+  background: #ffffff;
+  color: #b11226;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cta-top:hover {
+  opacity: 0.9;
 }
 
 /* TÍTULO */
 .title {
-  margin: 28px 0 16px;
+  margin: 28px 0 18px;
   font-size: 24px;
   font-weight: 600;
+  color: #111827;
 }
 
 /* CARDS */
 .card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
   border: 1px solid #e5e7eb;
 }
 
 .card h3 {
   margin-top: 0;
   margin-bottom: 16px;
-  color: #0b1f3b;
+  color: #7f1d1d;
   font-size: 18px;
 }
 
@@ -67,7 +87,6 @@ label {
 }
 
 input[type="text"],
-input[type="tel"],
 select {
   width: 100%;
   padding: 12px;
@@ -80,8 +99,8 @@ select {
 input:focus,
 select:focus {
   outline: none;
-  border-color: #16a34a;
-  box-shadow: 0 0 0 1px #16a34a33;
+  border-color: #b11226;
+  box-shadow: 0 0 0 1px #b1122640;
 }
 
 /* CHECKBOX */
@@ -90,44 +109,41 @@ input[type="checkbox"] {
   transform: scale(1.1);
 }
 
-.card label input[type="checkbox"] {
-  display: inline-block;
-}
-
 .card label {
   font-weight: 400;
-  line-height: 1.4;
-}
-
-/* ATIVIDADE */
-.card .checkbox-group,
-.card > label {
-  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 /* DESTAQUES */
 .highlight {
-  background: #f0fdf4;
-  border-color: #22c55e;
+  background: #fff5f5;
+  border-color: #fecaca;
 }
 
 .warning {
   background: #fef2f2;
-  border-color: #ef4444;
+  border-color: #fca5a5;
+}
+
+/* TEXTO LEGAL */
+.legal {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 10px;
 }
 
 /* BOTÃO */
 .submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, #16a34a, #22c55e);
-  color: #fff;
+  background: #b11226;
+  color: #ffffff;
   border: none;
   padding: 18px;
   font-size: 18px;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .submit-btn:hover {
@@ -137,6 +153,10 @@ input[type="checkbox"] {
 /* RESPONSIVO */
 @media (min-width: 768px) {
   .card {
-    padding: 24px;
+    padding: 26px;
+  }
+
+  .title {
+    font-size: 26px;
   }
 }
