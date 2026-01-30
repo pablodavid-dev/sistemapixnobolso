@@ -15,24 +15,23 @@
       Serviço financeiro local • Operação formal • Pagamentos via Pix<br>
       <strong>Exclusivo para motoboys do Norte da Ilha – Florianópolis</strong>
     </p>
+
+    <a href="#formulario" class="cta-top">
+      Solicitar pelo WhatsApp
+    </a>
   </div>
 </header>
 
-<main class="container">
-  <h2 class="title">Solicite seu Adiantamento</h2>
+<main class="container" id="formulario">
 
-  <!-- IDENTIFICAÇÃO -->
+  <h2 class="title">Solicitação de Quebra-Galho</h2>
+
+  <!-- IDENTIFICAÇÃO ESSENCIAL -->
   <section class="card">
-    <h3>Quem é você</h3>
-
-    <label>Nome completo</label>
-    <input type="text" name="nome" placeholder="Seu nome completo">
+    <h3>Dados básicos</h3>
 
     <label>CPF</label>
     <input type="text" name="cpf" placeholder="000.000.000-00">
-
-    <label>WhatsApp</label>
-    <input type="tel" name="whatsapp" placeholder="(48) 9xxxx-xxxx">
 
     <label>Bairro (Norte da Ilha)</label>
     <select name="bairro">
@@ -56,27 +55,6 @@
     <input type="text" name="complemento" placeholder="Casa, apto, fundos">
   </section>
 
-  <!-- ATIVIDADE -->
-  <section class="card">
-    <h3>Atividade Profissional</h3>
-
-    <label>
-      <input type="checkbox" name="uber"> Uber Moto
-    </label>
-
-    <label>
-      <input type="checkbox" name="99"> 99 Moto
-    </label>
-
-    <label>Há quanto tempo roda de app</label>
-    <select name="tempo_app">
-      <option value="">Selecione</option>
-      <option>Menos de 6 meses</option>
-      <option>6 meses a 1 ano</option>
-      <option>Mais de 1 ano</option>
-    </select>
-  </section>
-
   <!-- DECLARAÇÕES -->
   <section class="card">
     <label>
@@ -85,14 +63,14 @@
     </label>
   </section>
 
-  <!-- CONDIÇÕES -->
+  <!-- CONDIÇÕES DO SERVIÇO -->
   <section class="card highlight">
     <p>
       <strong>Condições do serviço</strong><br><br>
-      Valor liberado: R$ 30<br>
-      Pagamento: R$ 27 por dia<br>
-      Prazo: 2 dias<br>
-      Total: R$ 54
+      Valor liberado: <strong>R$ 50</strong><br>
+      Pagamento: <strong>3 diárias de R$ 27</strong><br>
+      Prazo: <strong>3 dias</strong><br>
+      Total a pagar: <strong>R$ 81</strong>
     </p>
 
     <label>
@@ -110,98 +88,41 @@
   </section>
 
   <!-- POLÍTICA DE COBRANÇA -->
-<section class="card warning">
-  <h3>Política de Cobrança</h3>
+  <section class="card warning">
+    <h3>Política de Cobrança</h3>
 
-  <p style="font-size:14px; line-height:1.6;">
-    Este serviço caracteriza <strong>adiantamento financeiro com obrigação de restituição</strong>.
-    <br><br>
-    Em caso de atraso ou não pagamento, o cliente estará sujeito a:
-  </p>
+    <p>
+      Este serviço caracteriza <strong>adiantamento financeiro com obrigação de restituição</strong>.
+      Em caso de atraso ou não pagamento, o cliente estará sujeito a:
+    </p>
 
-  <ul style="font-size:14px; line-height:1.6; padding-left:18px;">
-    <li>Bloqueio definitivo para novos créditos</li>
-    <li>Registro interno de inadimplência</li>
-    <li><strong>Em caso de atraso, funcionários da empresa poderão ir pessoalmente até o endereço informado e realizar contatos para localizar o cliente e efetuar a cobrança.</strong></li>
+    <ul>
+      <li>Bloqueio definitivo para novos créditos</li>
+      <li>Registro interno de inadimplência</li>
+      <li>
+        <strong>
+          Possibilidade de cobrança presencial no endereço informado,
+          bem como contatos para localização do cliente
+        </strong>
+      </li>
+    </ul>
 
-  </ul>
+    <p class="legal">
+      Todas as ações são realizadas de forma legal, ética e respeitosa.
+    </p>
 
-  <p style="font-size:13px; opacity:0.9;">
-    Todas as ações são realizadas de forma legal, ética e respeitosa.
-  </p>
+    <label>
+      <input type="checkbox" name="aceite_cobranca">
+      Estou ciente e concordo com a política de cobrança da empresa
+    </label>
+  </section>
 
-  <label>
-    <input type="checkbox" name="aceite_cobranca">
-    Estou ciente e concordo com a política de cobrança da empresa
-  </label>
-</section>
+  <button type="button" class="submit-btn">
+    Enviar solicitação
+  </button>
 
-
-  <button type="button" class="submit-btn">Enviar Solicitação</button>
 </main>
 
-<!-- JAVASCRIPT FUNCIONAL -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".submit-btn");
-
-  btn.addEventListener("click", () => {
-
-    const nome = document.querySelector('input[name="nome"]').value.trim();
-    const cpf = document.querySelector('input[name="cpf"]').value.trim();
-    const whatsapp = document.querySelector('input[name="whatsapp"]').value.trim();
-    const bairro = document.querySelector('select[name="bairro"]').value;
-    const endereco = document.querySelector('input[name="endereco"]').value.trim();
-    const numero = document.querySelector('input[name="numero"]').value.trim();
-    const complemento = document.querySelector('input[name="complemento"]').value.trim();
-    const tempoApp = document.querySelector('select[name="tempo_app"]').value;
-
-    const uber = document.querySelector('input[name="uber"]').checked;
-    const noveNove = document.querySelector('input[name="99"]').checked;
-
-    const declaraDocs = document.querySelector('input[name="declara_documentos"]').checked;
-    const aceiteCondicoes = document.querySelector('input[name="aceite_condicoes"]').checked;
-    const aceiteResponsabilidade = document.querySelector('input[name="aceite_responsabilidade"]').checked;
-
-    if (
-      !nome || !cpf || !whatsapp || !bairro || !endereco || !numero ||
-      !tempoApp || (!uber && !noveNove) ||
-      !declaraDocs || !aceiteCondicoes || !aceiteResponsabilidade
-    ) {
-      alert("⚠️ Preencha TODOS os campos obrigatórios.");
-      return;
-    }
-
-    const atividade = [];
-    if (uber) atividade.push("Uber Moto");
-    if (noveNove) atividade.push("99 Moto");
-
-    const mensagem = `
-🟢 NOVA SOLICITAÇÃO – QUEBRA GALHO
-
-Nome: ${nome}
-CPF: ${cpf}
-WhatsApp: ${whatsapp}
-
-Endereço: ${endereco}, Nº ${numero}
-Bairro: ${bairro}
-Complemento: ${complemento || "Não informado"}
-
-Atividade: ${atividade.join(", ")}
-Tempo de app: ${tempoApp}
-
-Valor: R$ 30
-Pagamento: R$ 27 por dia
-Prazo: 2 dias
-Total: R$ 54
-    `.trim();
-
-    const numeroWhats = "554896986075";
-    window.location.href = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
